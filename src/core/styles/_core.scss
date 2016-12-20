@@ -1,0 +1,70 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+}
+
+/* Remove border to delete the 1px line */
+.navbar-fixed-top {
+    border: 0;
+}
+
+/* Workaround for unwanted route changes due to empty href attributes - see http://angular-ui.github.io/bootstrap/ */
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+/* Custom CSS classes for the tile diretcive */
+.tile {  
+  width: 100%;
+	display: inline-block;
+	box-sizing: border-box;
+	background: #fff;		
+	padding: 20px;
+	margin-bottom: 30px;
+  
+  .title {
+		margin-top: 0px;
+	}
+  
+  &.purple, &.blue, &.red, &.orange, &.green {
+    color: #fff;
+  }
+  
+  &.purple {
+    background: $color_purple;
+
+		&:hover {
+			background: darken($color_purple, 10%);
+		}		
+  }
+  
+  &.red {
+    background: $color_red;
+
+		&:hover {
+			background: darken($color_red, 10%);
+		}		
+  }
+  
+  &.green {
+    background: $color_green;
+
+		&:hover {
+			background: darken($color_green, 10%);
+		}		
+  }
+  
+  &.blue {
+    background: $color_blue;
+
+		&:hover {
+			background: darken($color_blue, 10%);
+		}	
+  }
+  
+  &.orange {
+    background: $color_orange;
+
+		&:hover {
+			background: darken($color_orange, 10%);
+		}	
+  }
+}
