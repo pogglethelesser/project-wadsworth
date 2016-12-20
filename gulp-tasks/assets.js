@@ -7,7 +7,10 @@ module.exports = function (config) {
     gulp.task('fonts', ['clean-fonts'], function () {
         config.log('Copying fonts');
 
-        var fontDir = './bower_components/bootstrap-sass/assets/fonts/**/*.*';
+        var fontDir = [
+            './bower_components/bootstrap-sass/assets/fonts/**/*.*',
+            './node_modules/font-awesome/fonts/**/*.*'
+            ];
 
         return gulp
             .src(fontDir)

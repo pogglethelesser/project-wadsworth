@@ -31,6 +31,7 @@
     "dateformat": "^1.0.11",
     "debug": "^2.2.0",
     "del": "^2.0.2",
+    "font-awesome": "^4.7.0",
     "glob": "^5.0.10",
     "gulp": "^3.9.0",
     "gulp-angular-templatecache": "^1.8.0",
