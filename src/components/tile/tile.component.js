@@ -1,31 +1,54 @@
-angular.module('app.tile')
-    .component('tile',
-    {
-        templateUrl: 'components/tile/tile.component.html',
-        bindings: {
-            color: "@",
-            title: "@",
-            icon: "@",
-            onClick: "&?",
-        },
-        controller: [function () {
-            var _this = this;
+(function () {
 
-            _this.$onInit = $onInit;
-            _this.$onChanges = $onChanges;
+    'use strict';
 
-            _this.clickHandle = clickHandle;
+    angular.module('app.tile')
+        .component('tile', componentFunction())
+        .controller('TileController', ControllerFunction);
 
-            //Private 
-            function $onInit() {
-            }
+     // ----- componentFunction -----
+    componentFunction.$inject = [];
 
-            function $onChanges(vars) {
-            }
+    /* @ngInject */
+    function componentFunction() {
+        var component = {
+            templateUrl: 'components/tile/tile.component.html',
+            bindings: {
+                color: "@",
+                title: "@",
+                icon: "@",
+                onClick: "&?",
+            },
+            controller: 'TileController',
+            controllerAs: 'ctrl'
+        };
 
-            function clickHandle() {
-                if (_this.onClick !== undefined) _this.onClick();
-            }
-        }],
-        controllerAs: 'ctrl'
-    });
+        return component;
+    }
+
+
+    // ----- ControllerFunction -----
+    ControllerFunction.$inject = [];
+
+    /* @ngInject */
+    function ControllerFunction() {
+        var _this = this;
+
+        _this.$onInit = $onInit;
+        _this.$onChanges = $onChanges;
+
+        _this.clickHandle = clickHandle;
+
+        //Private 
+        function $onInit() {
+        }
+
+        function $onChanges(vars) {
+        }
+
+        function clickHandle() {
+            if (_this.onClick !== undefined) _this.onClick();
+        }
+    }
+
+})();
