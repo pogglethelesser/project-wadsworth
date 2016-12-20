@@ -14,6 +14,8 @@ angular.module('app.tile')
             _this.$onInit = $onInit;
             _this.$onChanges = $onChanges;
 
+            _this.clickHandle = clickHandle;
+
             //Private 
             function $onInit() {
             }
@@ -21,7 +23,7 @@ angular.module('app.tile')
             function $onChanges(vars) {
             }
 
-            function clickHandler() {
+            function clickHandle() {
                 if (_this.onClick !== undefined) _this.onClick();
             }
         }],

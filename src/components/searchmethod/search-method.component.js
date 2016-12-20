@@ -6,47 +6,32 @@ angular.module('app.searchMethod')
             onPropertySelected: "&?",
             currentProperty: "<?"
         },
-        controller: ['$log', function ($log) {
+        controller: [function () {
             var _this = this;
 
-            _this.busy = false;
-            _this.search = search;
-            _this.selectItem = selectItem;
-            _this.getAddressText = getAddressText;
             _this.$onInit = $onInit;
-            _this.$onChanges = $onChanges;
+
+            _this.searchByText = searchByText;
+            _this.searchByMap = searchByMap;            
+            _this.searchByLocation = searchByLocation;
 
             //Private 
             function $onInit() {
             }
 
-            function $onChanges(vars) {
-                if (vars.currentProperty && vars.currentProperty.currentValue) {
-                    _this.searchText = _this.currentProperty.address;
-                }
+            function searchByText() {
+                alert('Placeholder - Search By Text');
             }
 
-
-            function search(searchTerm) {
- /*               blockUI.start();
-
-                return searchService.searchAsync(searchTerm)
-                    .finally(function () {
-                        blockUI.stop();
-                    });*/
+            function searchByMap() {
+                alert('Placeholder - Search By Map');
             }
 
-            function getAddressText(propertyAddress) {
-                return propertyAddress.label;
+            function searchByLocation() {
+                alert('Placeholder - Search by Location');
             }
 
-            function selectItem(propertyAddress) {
-
-                if (propertyAddress) {
-                    if (_this.onPropertySelected) {
-                        _this.onPropertySelected({ propertyAddress: propertyAddress });
-                    }
-                }
-            }
-        }]
+        }],
+        controllerAs: 'searchMthdCtrl'
+        
     });

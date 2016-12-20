@@ -2,19 +2,15 @@
 
 	<div class="row">
 		<div class="col-xs-6 col-md-4">
-			<tile icon="fa-search" color="red" title="Search By Text"></tile>
+			<tile icon="fa-search" color="red" title="Search By Text" on-click="searchMthdCtrl.searchByText()" ></tile>
 		</div>	
 
 		<div class="col-xs-6 col-md-4">
-			<div class="tile blue">
-				<p>Search By Map</p>
-			</div>
+			<tile icon="fa-map-o" color="blue" title="Search By Map" on-click="searchMthdCtrl.searchByMap()"></tile>
 		</div>	
 
 		<div class="col-xs-6 col-md-4">
-			<div class="tile blue">
-				<p>Use Current Location</p>
-			</div>	
+			<tile icon="fa-map-marker" color="green" title="Use Current Location" on-click="searchMthdCtrl.searchByLocation()"></tile>
 		</div>
 	</div>
 
