@@ -15,12 +15,8 @@
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
-            .state('dashboard', {
-                url: '/',
-                template: '<tmpl-dashboard></tmpl-dashboard>'
-            })
             .state('searchmethod', {
-                url: '/method',
+                url: '/',
                 template: '<search-method></search-method>'
 
                 })
@@ -28,6 +24,10 @@
                 url: '/search',
                 template: '<div><h1>Search</h1><p>Placeholder</p></div>'
 
+                })
+            .state('search.text',{
+                url: '/search/{searchtext}',
+                template: '<div><h1>Search by Text</h1><p>Placeholder</p></div>'
                 })
             ;
     }
