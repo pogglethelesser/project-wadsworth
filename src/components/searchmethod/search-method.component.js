@@ -27,10 +27,10 @@
 
 
     // ----- ControllerFunction -----
-    ControllerFunction.$inject = [];
+    ControllerFunction.$inject = ['$state'];
 
     /* @ngInject */
-    function ControllerFunction() {
+    function ControllerFunction($state) {
         var _this = this;
 
         _this.$onInit = $onInit;
@@ -44,15 +44,15 @@
         }
 
         function searchByText() {
-            alert('Placeholder - Search By Text');
+            $state.go('search_text');
         }
 
         function searchByMap() {
-            alert('Placeholder - Search By Map');
+            $state.go('search_map');
         }
 
         function searchByLocation() {
-            alert('Placeholder - Search by Location');
+            $state.go('search_location');
         }
     }
 

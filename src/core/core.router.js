@@ -18,17 +18,75 @@
             .state('searchmethod', {
                 url: '/',
                 template: '<search-method></search-method>'
+            })
 
-                })
             .state('search', {
                 url: '/search',
-                template: '<div><h1>Search</h1><p>Placeholder</p></div>'
+                views: {
+                    '': { 
+                        templateUrl: 'components/search/search.component.html' 
+                    },
 
-                })
-            .state('search.text',{
-                url: '/search/{searchtext}',
-                template: '<div><h1>Search by Text</h1><p>Placeholder</p></div>'
-                })
-            ;
+                    'actionsPanel@search': {
+                        template: 'Search Actions Panel'
+                    },
+
+                    'mapPanel@search': {
+                        template: 'Map Panel'
+                    }
+                }
+            })
+
+            .state('search_text', {
+                url: '/searchByText',
+                views: {
+                    '': { 
+                        templateUrl: 'components/search/search.component.html' 
+                    },
+
+                    'actionsPanel@search_text': {
+                        template: 'Search Actions Panel - search by text'
+                    },
+
+                    'mapPanel@search_text': {
+                        template: 'Map Panel - search by text'
+                    }
+                }
+            })
+
+            .state('search_map', {
+                url: '/searchByMap',
+                views: {
+                    '': { 
+                        templateUrl: 'components/search/search.component.html' 
+                    },
+
+                    'actionsPanel@search_map': {
+                        template: 'Search Actions Panel - search by map'
+                    },
+
+                    'mapPanel@search_map': {
+                        template: 'Map Panel - search by map'
+                    }
+                }
+            })
+
+            .state('search_location', {
+                url: '/searchByLocation',
+                views: {
+                    '': { 
+                        templateUrl: 'components/search/search.component.html' 
+                    },
+                    
+                    'actionsPanel@search_location': {
+                        template: 'Search Actions Panel - search by location'
+                    },
+
+                    'mapPanel@search_location': {
+                        template: 'Map Panel - search by location'
+                    }
+                }
+            });
+
     }
 })();
