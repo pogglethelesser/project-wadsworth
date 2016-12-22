@@ -45,7 +45,7 @@
                     },
 
                     'actionsPanel@search_text': {
-                        template: 'Search Actions Panel - search by text'
+                        template: '<search-text></search-text>'
                     },
 
                     'mapPanel@search_text': {

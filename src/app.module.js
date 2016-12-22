@@ -8,11 +8,12 @@
         // Features (listed alphabetically)
         'app.approot',
         'app.dashboard',
-        'app.topnav',
         'app.esri',
+        'app.search',
+        'app.searchMethod',
+        'app.suggestion',
         'app.tile',
-        'app.searchMethod'
-
+        'app.topnav',
         'esri.core'
     ]);
 })();
