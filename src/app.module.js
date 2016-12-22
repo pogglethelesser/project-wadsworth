@@ -9,8 +9,10 @@
         'app.approot',
         'app.dashboard',
         'app.topnav',
+        'app.esri',
         'app.tile',
         'app.searchMethod'
 
+        'esri.core'
     ]);
 })();
