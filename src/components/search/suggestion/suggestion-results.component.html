@@ -1,0 +1,8 @@
+<div class="items">
+	<suggestion-result 
+		ng-repeat="item in suggestRstCtrl.items | filter:item track by $index" 
+		on-click="" 
+		ng-mouseenter="suggestRstCtrl.setCurrent($index)" 
+		model="item" >
+	</suggestion-result>
+</div>

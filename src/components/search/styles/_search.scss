@@ -12,3 +12,24 @@
 
 }
 
+.suggestion-item {
+	display: inline-block;
+	width: 100%;
+	padding: 10px;
+
+	>.suggestion-icon {
+		float: left;
+		height: 100%;
+	}
+
+	>.suggestion-link {
+		float: right;
+	}
+
+	>.suggestion-subtitle {
+		font-size: 0.9em;
+		font-style: italic;
+		color: $color_blue;
+	}
+}
+

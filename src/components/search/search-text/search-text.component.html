@@ -1,5 +1,13 @@
 <div class="row search-text">
 	<div class="col-md-12">
-	 	<suggestion-input></suggestion-input>
+	 	<!--<suggestion-input></suggestion-input>-->
+	 	<div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" 
+                    ng-model="searchTextCtrl.search.searchTerm" 
+                    placeholder="Locations, addresses, street names" 
+                    class="form-control">
+        </div>
 	</div>
 </div>
+<suggestion-results items="searchTextCtrl.suggestions"></suggestion-results>

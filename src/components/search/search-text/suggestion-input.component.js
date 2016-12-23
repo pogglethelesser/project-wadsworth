@@ -12,7 +12,7 @@
     /* @ngInject */
     function componentFunction() {
         var component = {
-            templateUrl: 'components/search/search-text/suggestion.component.html',
+            templateUrl: 'components/search/search-text/suggestion-input.component.html',
             bindings: {
                 onSuggestionSelected: "&?",
                 currentSuggestion: "<?"
