@@ -51,6 +51,9 @@
                 case 'VAL':
                     return 'fa-home';
                     break;
+                case 'RDI':
+                    return 'fa-road'
+                    break;
                 default:
                     return 'fa-map-marker';
                     break;

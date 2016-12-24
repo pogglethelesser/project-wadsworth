@@ -35,18 +35,25 @@
 
         _this.search = { searchTerm: '' };
         _this.suggestions = suggestionService.suggestions;
+        _this.previousSearches = [
+            {
+                title: '200 Tuam Street',
+                subtitle: 'Example previous location',
+                icon_class: 'VAL',
+                x: 0,
+                y: 0,
+                srid: 2193,
+                key: '',
+                latitude: 0,
+                longitude: 0
+            }
+        ];
 
         _this.$onInit = $onInit;
+        _this.clearSearch = clearSearch;
 
         // Watch search term to initiate suggestion query
-        // $scope.$watch('_this.searchTerm', searchTermWatchHandler);
-        $scope.$watch('searchTextCtrl.search.searchTerm', function (current, original) {
-            if (current !== undefined && current.length <=  (_this.minChars === undefined ? 0 : _this.minChars)) {
-                suggestionService.clearSuggestions();
-            } else {
-                suggestionService.updateSuggestions(current);
-            }
-        }, true);
+        $scope.$watch('searchTextCtrl.search.searchTerm', searchTermWatchHandler, true);
 
 
         //Private 
@@ -54,15 +61,22 @@
 
         }
 
-/*
         function searchTermWatchHandler (current, original) {
-            if (_this.minChars === undefined || (current !== undefined && current.length < _this.minChars)) {
-                suggestionService.clearSuggestions();
+            if (current !== undefined && current.length <=  (_this.minChars === undefined ? 0 : _this.minChars)) {
+                resetSuggestions();
             } else {
                 suggestionService.updateSuggestions(current);
             }
         }
-*/
+
+        function resetSuggestions() {
+            suggestionService.clearSuggestions();
+        } 
+
+        function clearSearch() {
+            _this.search.searchTerm = '';
+            resetSuggestions();
+        }
     }
 
 })();

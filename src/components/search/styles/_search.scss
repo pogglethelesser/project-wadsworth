@@ -1,3 +1,8 @@
+.search-text {
+	position: relative;
+	margin: 10px 0px 10px 0px;
+}
+
 .search-component {
 
 	>.search-component-body{
@@ -16,20 +21,48 @@
 	display: inline-block;
 	width: 100%;
 	padding: 10px;
+	cursor: pointer;
+	border-bottom: thin solid $color_grey;
 
 	>.suggestion-icon {
 		float: left;
-		height: 100%;
+		padding: 5px 10px 5px 0px;
 	}
 
 	>.suggestion-link {
 		float: right;
+		padding: 5px 0px 5px 10px;
+		cursor: pointer;
+	}
+
+	>.suggestion-title {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		margin-left: 35px; 
+		white-space: nowrap;
 	}
 
 	>.suggestion-subtitle {
 		font-size: 0.9em;
 		font-style: italic;
 		color: $color_blue;
+		margin-left: 35px; 
+	}
+
+	&:hover {
+		color: $color_white;
+		background-color: $color_blue;
+		border-bottom: thin solid $color_blue;
+
+		>.suggestion-subtitle {
+			color: $color_white;
+		}
 	}
 }
 
+.search-results-header {
+	margin-top: 5px;
+	margin-bottom: 0;
+	font-size: 0.9em;
+	color: $color_grey;
+}

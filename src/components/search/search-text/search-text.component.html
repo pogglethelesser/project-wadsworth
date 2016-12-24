@@ -1,13 +1,17 @@
 <div class="row search-text">
 	<div class="col-md-12">
-	 	<!--<suggestion-input></suggestion-input>-->
 	 	<div class="input-group">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
             <input type="text" 
                     ng-model="searchTextCtrl.search.searchTerm" 
+                    ng-keydown="searchTextCtrl.keyDownHandler($event)"
                     placeholder="Locations, addresses, street names" 
                     class="form-control">
+            <span class="btn btn-default input-group-addon" ng-click="searchTextCtrl.clearSearch()"><i class="fa fa-times"></i></span>
         </div>
-	</div>
+        <p class="search-results-header" ng-hide="searchTextCtrl.suggestions.length === 0">Suggestions</p>
+        <suggestion-results items="searchTextCtrl.suggestions"></suggestion-results>
+        <p class="search-results-header" ng-hide="searchTextCtrl.previousSearches.length === 0">Previous Searches</p>
+        <suggestion-results items="searchTextCtrl.previousSearches"></suggestion-results>
+    </div>
 </div>
-<suggestion-results items="searchTextCtrl.suggestions"></suggestion-results>
