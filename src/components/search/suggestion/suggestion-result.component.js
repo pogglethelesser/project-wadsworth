@@ -35,6 +35,7 @@
 
         _this.$onInit = $onInit;
         _this.getIcon = getIcon;
+        _this.handleClick = handleClick;
 
 
         //Private 
