@@ -27,10 +27,10 @@
 
 
     // ----- ControllerFunction -----
-    ControllerFunction.$inject = ['$scope', 'suggestionService'];
+    ControllerFunction.$inject = ['$scope', 'suggestionService','featuresetsHelper'];
 
     /* @ngInject */
-    function ControllerFunction($scope, suggestionService) {
+    function ControllerFunction($scope, suggestionService, featuresetsHelper) {
         var _this = this;
 
         _this.search = { searchTerm: '' };
@@ -51,6 +51,11 @@
 
         _this.$onInit = $onInit;
         _this.clearSearch = clearSearch;
+
+        // Load the datasets
+        featuresetsHelper.getLayersAsync().then(function(data) {
+            _this.featuresets = data;
+        });
 
         // Watch search term to initiate suggestion query
         $scope.$watch('searchTextCtrl.search.searchTerm', searchTermWatchHandler, true);

@@ -27,5 +27,14 @@
 		        urbanTagName: "Urban",
 		        proxyUrl: 'proxy.ashx',
 		        geometryServiceUrl: "//gis.ecan.govt.nz/arcgis/rest/services/Utilities/Geometry/GeometryServer"
+		    })
+	     .constant('layerConstants',
+		    {
+		        queryDistance: {
+		            close: 200,
+		            near: 1000,
+		            far: 3000,
+		            distant: 5000
+		        }
 		    });
 })();
