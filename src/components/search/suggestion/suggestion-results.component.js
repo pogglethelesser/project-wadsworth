@@ -27,10 +27,10 @@
 
 
     // ----- ControllerFunction -----
-    ControllerFunction.$inject = ['$timeout'];
+    ControllerFunction.$inject = [];
 
     /* @ngInject */
-    function ControllerFunction($timeout) {
+    function ControllerFunction() {
         var _this = this;
 
         _this.$onInit = $onInit;

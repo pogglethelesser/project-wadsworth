@@ -3,14 +3,14 @@
 	 	<div class="input-group">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
             <input type="text" 
-                    ng-model="searchTextCtrl.search.searchTerm" 
+                    ng-model="searchTextCtrl.searchTerm" 
                     ng-keydown="searchTextCtrl.keyDownHandler($event)"
                     placeholder="Locations, addresses, street names" 
                     class="form-control">
             <span class="btn btn-default input-group-addon" ng-click="searchTextCtrl.clearSearch()"><i class="fa fa-times"></i></span>
         </div>
         <p class="search-results-header" ng-hide="searchTextCtrl.suggestions.length === 0">Suggestions</p>
-        <suggestion-results items="searchTextCtrl.suggestions"></suggestion-results>
+        <suggestion-results items="searchTextCtrl.suggestions" currentIndex"searchTextCtrl.currentItem"></suggestion-results>
         <p class="search-results-header" ng-hide="searchTextCtrl.previousSearches.length === 0">Previous Searches</p>
         <suggestion-results items="searchTextCtrl.previousSearches"></suggestion-results>
     </div>

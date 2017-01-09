@@ -33,7 +33,9 @@
     function ControllerFunction($scope, suggestionService, featuresetsHelper) {
         var _this = this;
 
-        _this.search = { searchTerm: '' };
+        _this.activeIdx = -1;
+        _this.minChars = _this.minChars === undefined ? 1 : _this.minChars;
+        _this.searchTerm = '';
         _this.suggestions = suggestionService.suggestions;
         _this.previousSearches = [
             {
@@ -58,7 +60,7 @@
         });
 
         // Watch search term to initiate suggestion query
-        $scope.$watch('searchTextCtrl.search.searchTerm', searchTermWatchHandler, true);
+        $scope.$watch('searchTextCtrl.searchTerm', searchTermWatchHandler, true);
 
 
         //Private 
@@ -67,7 +69,7 @@
         }
 
         function searchTermWatchHandler (current, original) {
-            if (current !== undefined && current.length <=  (_this.minChars === undefined ? 0 : _this.minChars)) {
+            if (current === '' || current.length <=  _this.minChars) {
                 resetSuggestions();
             } else {
                 suggestionService.updateSuggestions(current);
@@ -79,7 +81,8 @@
         } 
 
         function clearSearch() {
-            _this.search.searchTerm = '';
+
+            _this.searchTerm = '';
             resetSuggestions();
         }
     }
