@@ -18,7 +18,7 @@
 		        searchClasses: [],
 		        spatialReference: 2193
 		    })
-	    .constant('mapSettings',
+	    .constant('searchSettings',
 		    {
 		        baseUrl: "//www.arcgis.com/sharing/rest/",
 		        baseMapId: "17ea68e0628140da919d16e49e878e79",

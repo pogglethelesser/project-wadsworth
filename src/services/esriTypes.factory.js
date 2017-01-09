@@ -5,9 +5,9 @@
         .module('app.esri')
         .factory('esriTypes', esriTypes); 
 
-        esriTypes.$inject = ['$q', 'mapSettings', 'esriLoader'];
+        esriTypes.$inject = ['$q', 'searchSettings', 'esriLoader'];
 
-        function esriTypes($q, mapSettings, esriLoader) {
+        function esriTypes($q, searchSettings, esriLoader) {
             var _deferredOnLoaded = $q.defer();
 
             esriLoader.require(
@@ -76,8 +76,8 @@
                     esri.BufferParameters = BufferParameters;
                     esri.jsonUtils = jsonUtils;
                     esri.config = config;
-                    esri.config.geometryServiceUrl = mapSettings.geometryServiceUrl;
-                    esri.config.request.proxyUrl = mapSettings.proxyUrl;
+                    esri.config.geometryServiceUrl = searchSettings.geometryServiceUrl;
+                    esri.config.request.proxyUrl = searchSettings.proxyUrl;
 
                     _deferredOnLoaded.resolve(esri);
                 });
